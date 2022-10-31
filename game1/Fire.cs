@@ -41,12 +41,12 @@ public class Fire : MonoBehaviour
     private GameObject hit_effect;
     void Start()
     {
-        Cursor.visible = false;                 //Ä¿¼­ ¼û±â±â
+        Cursor.visible = false;                 //ì»¤ì„œ ìˆ¨ê¸°ê¸°
         Cursor.lockState = CursorLockMode.Locked;
-        count = 30;                             // ÃÑ¾Ë
-        ScriptTex.text = count.ToString();      // ÃÑ¾Ë ÅØ½ºÆ®
-        count2 = 150;                           // ÃÑ¾Ë
-        fullammo.text = count2.ToString();      // ÃÑ¾Ë ÅØ½ºÆ®
+        count = 30;                             // ì´ì•Œ
+        ScriptTex.text = count.ToString();      // ì´ì•Œ í…ìŠ¤íŠ¸
+        count2 = 150;                           // ì´ì•Œ
+        fullammo.text = count2.ToString();      // ì´ì•Œ í…ìŠ¤íŠ¸
         target = GameObject.Find("Player").transform;
         gunSound = GetComponents<AudioSource>();
         gunSound[0].volume = 0.1f;
@@ -105,12 +105,12 @@ public class Fire : MonoBehaviour
             }
             if (Input.GetKeyDown("b") && autoC == false)
             {
-                Debug.Log("¿ÀÅä");
+                Debug.Log("ì˜¤í† ");
                 autoC = true;
             }
             else if (Input.GetKeyDown("b") && autoC == true)
             {
-                Debug.Log("¼öµ¿");
+                Debug.Log("ìˆ˜ë™");
                 autoC = false;
             }
             if (count2 > 0)
@@ -136,7 +136,7 @@ public class Fire : MonoBehaviour
     void SingleShut()
     {
         Instantiate(bullet, spPoint.position, spPoint.rotation);
-        //Debug.DrawRay(cam.transform.position, cam.transform.forward * CamMaxLine, Color.red, 0.3f);       ·¹ÀÌÄ³½ºÆ® Ç¥½Ã
+        //Debug.DrawRay(cam.transform.position, cam.transform.forward * CamMaxLine, Color.red, 0.3f);       ë ˆì´ìºìŠ¤íŠ¸ í‘œì‹œ
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, CamMaxLine, mask))
         {
             GameObject hiteffect = Instantiate(hit_effect, hit.point, Quaternion.LookRotation(hit.normal));
@@ -146,7 +146,7 @@ public class Fire : MonoBehaviour
         {
             GameObject hiteffect = Instantiate(hit_effect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(hiteffect, 1);
-            if (hit.collider.CompareTag("Enermy"))      //ÆÄ¶õ»ö °øÀ» ¸ÂÇûÀ»½Ã Á¡¼ö ¿Ã¸²
+            if (hit.collider.CompareTag("Enermy"))      //íŒŒë€ìƒ‰ ê³µì„ ë§í˜”ì„ì‹œ ì ìˆ˜ ì˜¬ë¦¼
             {
                 Destroy(hit.transform.gameObject);
                 GameObject clone = Instantiate(hit_enermy_prefab, hit.point, Quaternion.LookRotation(hit.normal));
@@ -155,7 +155,7 @@ public class Fire : MonoBehaviour
                 GameManagerLogic.spawn_control = true;
                 Total.TotalCount++;
             }
-            if (hit.collider.CompareTag("nt_Enermy"))    //»¡°£»ö °øÀ» ¸ÂÇûÀ»½Ã Á¡¼ö ³»¸²
+            if (hit.collider.CompareTag("nt_Enermy"))    //ë¹¨ê°„ìƒ‰ ê³µì„ ë§í˜”ì„ì‹œ ì ìˆ˜ ë‚´ë¦¼
             {
                 Destroy(hit.transform.gameObject);
                 GameObject clone = Instantiate(hit_nt_enermy_prefab, hit.point, Quaternion.LookRotation(hit.normal));
@@ -180,7 +180,7 @@ public class Fire : MonoBehaviour
         }
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, CamMaxLine, Layermask))
         {
-            if (hit.collider.CompareTag("Enermy"))   //ÆÄ¶õ»ö °øÀ» ¸ÂÇûÀ»½Ã Á¡¼ö ¿Ã¸²
+            if (hit.collider.CompareTag("Enermy"))   //íŒŒë€ìƒ‰ ê³µì„ ë§í˜”ì„ì‹œ ì ìˆ˜ ì˜¬ë¦¼
             {
                 Destroy(hit.transform.gameObject);
                 GameObject clone = Instantiate(hit_enermy_prefab, hit.point, Quaternion.LookRotation(hit.normal));
@@ -189,7 +189,7 @@ public class Fire : MonoBehaviour
                 GameManagerLogic.spawn_control = true;
                 Total.TotalCount++;
             }
-            if (hit.collider.CompareTag("nt_Enermy"))   //»¡°£»ö °øÀ» ¸ÂÇûÀ»½Ã Á¡¼ö ³»¸²
+            if (hit.collider.CompareTag("nt_Enermy"))   //ë¹¨ê°„ìƒ‰ ê³µì„ ë§í˜”ì„ì‹œ ì ìˆ˜ ë‚´ë¦¼
             {
                 Destroy(hit.transform.gameObject);
                 GameObject clone = Instantiate(hit_nt_enermy_prefab, hit.point, Quaternion.LookRotation(hit.normal));
@@ -210,7 +210,7 @@ public class Fire : MonoBehaviour
     {
         canreload = false;
         mixammo = count + count2;
-        Debug.Log("ÀçÀåÀü");
+        Debug.Log("ì¬ì¥ì „");
         Debug.Log(count);
         yield return new WaitForSeconds(1.5f);
         Count2_num();
