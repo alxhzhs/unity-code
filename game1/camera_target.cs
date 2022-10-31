@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class camera_target : MonoBehaviour
 {
-    //Ä«¸Ş¶ó À§Ä¡, °¢µµ, FOV ---------
+    //ì¹´ë©”ë¼ ìœ„ì¹˜, ê°ë„, FOV ---------
     /*[SerializeField] Vector3 position = new Vector3(-1f, 3.6f, -7.8f);
     [SerializeField] Vector3 rotation = new Vector3(12f, 0, -0f);*/
     [SerializeField] Vector3 position = new Vector3(-0, 0, -0);
@@ -12,7 +12,7 @@ public class camera_target : MonoBehaviour
     [SerializeField][Range(10, 100)]
     float fov = 30f;
 
-    //Ä«¸Ş¶ó ÀÌµ¿ ¹× È¸Àü¼Óµµ ---------
+    //ì¹´ë©”ë¼ ì´ë™ ë° íšŒì „ì†ë„ ---------
     float moveSpeed = 10f;
     float turnSpeed = 10f;
    // float rot = 0.0f;
@@ -55,7 +55,7 @@ public class camera_target : MonoBehaviour
             Quaternion rot = target.rotation;
 
             pivot.position = Vector3.Lerp(pivot.position, pos, moveSpeed * Time.deltaTime);
-            //pivot.rotation¿¡ pos°ªÀ» ´ëÀÔÇÑ´Ù
+            //pivot.rotationì— posê°’ì„ ëŒ€ì…í•œë‹¤
             pivot.rotation = Quaternion.Lerp(pivot.rotation, rot, turnSpeed * Time.deltaTime);
         }
 
