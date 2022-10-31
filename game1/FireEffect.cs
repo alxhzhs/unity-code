@@ -5,11 +5,11 @@ using UnityEngine;
 public class FireEffect : MonoBehaviour
 {
     // Start is called before the first frame update
-    //¿ÀºêÁ§Æ®°¡ È°¼ºÈ­ µÉ¶§ È£Ãâ
+    //ì˜¤ë¸Œì íŠ¸ê°€ í™œì„±í™” ë ë•Œ í˜¸ì¶œ
     /*   private void OnEnable()
        {
-           //0.09ÃÊ È°¼ºÈ­ µÇ°í ºñÈ°¼ºÈ­ µÊ
-           //ÁöÁ¤ÇÑ ÇÔ¼ö¸¦ Áö½ÃÇÑ ÈÄ¿¡ È£Ãâ, ÇÔ¼öÀÌ¸§Àº ¹®ÀÚ¿­
+           //0.09ì´ˆ í™œì„±í™” ë˜ê³  ë¹„í™œì„±í™” ë¨
+           //ì§€ì •í•œ í•¨ìˆ˜ë¥¼ ì§€ì‹œí•œ í›„ì— í˜¸ì¶œ, í•¨ìˆ˜ì´ë¦„ì€ ë¬¸ìì—´
            Invoke("Disable", 0.09f);
        }
        private void OnDisable()
